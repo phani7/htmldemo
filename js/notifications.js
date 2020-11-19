@@ -55,24 +55,25 @@ function pageInit() {
     Notification.requestPermission().then(response => {
         permission = response;
         if (response === 'granted') {
+            let notifyOptions = {
+                // actions: [],
+                badge: '',
+                body: 'Simple Notification <b>hh</b>',
+                data: {},
+                dir: 'auto',    //auto |ltr |rtl
+                lang: '',
+                tag: '',
+                icon: '../assets/briefcase_512.png',
+                image: '../assets/apple.png',
+                renotify: false,
+                requireInteraction: true,
+                silent: false,
+                sound: '../assets/notify.mp3',
+                timestamp: '',
+                vibrate: [50, 100, 50, 200]
+            }
             notifyBtn.addEventListener('click', (e) => {
-                let notifyOptions = {
-                    // actions: [],
-                    badge: '',
-                    body: 'Simple Notification <b>hh</b>',
-                    data: {},
-                    dir: 'auto',    //auto |ltr |rtl
-                    lang: '',
-                    tag: '',
-                    icon: '../assets/briefcase_512.png',
-                    image: '../assets/apple.png',
-                    renotify: false,
-                    requireInteraction: true,
-                    silent: false,
-                    sound: '../assets/notify.mp3',
-                    timestamp: '',
-                    vibrate: [50, 100, 50, 200]
-                }
+
                 let notify = new Notification('In-app Notification', notifyOptions)
 
                 notify.onshow = ev => { console.log('notification onshow event'); };
@@ -84,7 +85,7 @@ function pageInit() {
             notifyswBtn.addEventListener('click', (e) => {
                 navigator.serviceWorker.getRegistration().then(reg => {
                     swReg = reg;
-                    reg.showNotification('In-app Notification', { body: 'notification from service worker' });
+                    reg.showNotification('In-app Notification', { ...notifyOptions, body: 'notification from service worker' });
                 })
             })
         }
