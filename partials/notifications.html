@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Demo</title>
+</head>
+
+<body>
+    <h2>Browser Notifications</h2>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <section>
+        <ol>
+            <li>Feature detect: </li>
+            <li>Service Worker registration:</li>
+            <li>Request permission</li>
+            <li>(push) User subscription</li>
+        </ol>
+        <span><b>Note:</b> <i>Push & Notification using SW are dependent on the Service Worker</i></span>
+
+        <div>
+            <h3>In-app Notifications (Notification)</h3>
+            <div>
+                non-persistent notification <button id="notify-btn">Notification</button>
+            </div>
+            <div>
+                persistent notification <button id="notifysw-btn">Notification (using SW)</button>
+            </div>
+        </div>
+        <div>
+            <h3>Push Notifications (Push)</h3>
+            <button id="subscribe-btn" disabled>Subscribe</button>
+            <button id="push-btn" disabled>Push Notification</button>
+            <a href="https://phaniyellakara.github.io/pwa/">Push Demo</a>
+        </div>
+
+    </section>
+    <section>
+        Reference: <a href="https://notifications.spec.whatwg.org/">https://notifications.spec.whatwg.org/</a>
+    </section>
+    <script src="../js/notifications.js"></script>
+</body>
+
+</html>
