@@ -63,8 +63,7 @@ function pageInit() {
                 dir: 'auto',    //auto |ltr |rtl
                 lang: '',
                 tag: '',
-                icon: '../assets/briefcase_512.png',
-                image: '../assets/apple.png',
+                icon: '../assets/briefcase_512.png',                
                 renotify: false,
                 requireInteraction: true,
                 silent: false,
